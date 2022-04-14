@@ -1,0 +1,26 @@
+{% extends "front/base.html.twig" %}
+
+{% block main %}
+<div class="container row g-3 align-items-center">
+    <h2>Category lists</h2>
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Name</th>
+                <th scope="col">Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for category in categories %} 
+                <tr>
+                <th scope="row"><a href="{{ path('show_category', {'id' : category.id } ) }}" style="color: black" >{{ category.id }}</a></th>
+                <td>{{category.name}}</td>
+                <td>{{category.description}}</td>
+                </tr>
+            {% endfor %}
+
+        </tbody>
+    </table>
+</div>
+{% endblock %}

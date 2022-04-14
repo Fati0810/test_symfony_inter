@@ -1,0 +1,41 @@
+{% extends "admin/base.html.twig" %}
+
+
+{% block main %}
+
+<div class="container row g-3 align-items-center">
+    <h2>Category lists</h2>
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Name</th>
+                <th scope="col">Description</th>
+                <th scope="col">Option</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for category in categories %} 
+                <tr>
+                <th scope="row"><a href="{{ path('admin_show_category', {'id' : category.id } ) }}" style="color: black" >{{ category.id }}</a></th>
+                <td>{{category.name}}</td>
+                <td>{{category.description}}</td>
+                <td>
+                <a href="{{ path('admin_update_category', {'id' : category.id } ) }}" style="color: black">
+                <i class="fa-solid fa-pen-to-square"></i></a>
+                <a href="{{ path('admin_delete_category', {'id' : category.id}) }}" style="color: black">
+                <i class="fa-solid fa-trash-can"></i></a>
+                </td>
+                </tr>
+            {% endfor %}
+
+        </tbody>
+    </table>
+    <div>
+        <a href="{{ path('admin_create_category')}}" class="btn btn-outline-secondary">Ajouter une category</a>
+    </div>
+</div>
+
+
+
+{% endblock %}

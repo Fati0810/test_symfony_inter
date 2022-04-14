@@ -1,0 +1,12 @@
+twig:
+  default_path: "%kernel.project_dir%/templates"
+
+  globals:
+    admin: "Vous êtes sur la partie administrateur"
+    front: "Vous êtes sur la partie front"
+    gcategories: '@App\Globals\Categories'
+    gproducts: '@App\Globals\Products'
+
+when@test:
+  twig:
+    strict_variables: true

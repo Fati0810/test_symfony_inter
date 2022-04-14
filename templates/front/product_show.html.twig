@@ -1,0 +1,31 @@
+{% extends 'front/base.html.twig' %}
+
+{% block main %}
+
+
+<div class="container row g-3 align-items-center">
+    <table class="table">
+    <thead>
+        <tr>
+        <th scope="col">Name</th>
+        <th scope="col">Price</th>
+        <th scope="col">Stock</th>
+        <th scope="col">Description</th>
+        <th scope="col">Category</th>
+        <th scope="col">Licence</th>
+        </tr>
+    </thead>
+    <tbody>
+       <tr>
+        <td>{{product.name}}</td>
+        <td>{{product.price}}€</td>
+        <td>{{product.stock}}</td>
+        <td>{{product.description}}</td>
+        <td>{{product.category.name}}</td>
+        <td>{{product.licence.name}}</td>
+        </tr>
+    </tbody>
+    </table>
+</div>
+
+{% endblock %}

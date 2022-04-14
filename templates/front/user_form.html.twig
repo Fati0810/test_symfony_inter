@@ -1,0 +1,32 @@
+{% extends "front/base.html.twig" %}
+
+{% block main %}
+
+{{ form_start(userForm) }}
+
+<div>
+    <div>
+    {{form_label(userForm.email, 'Email :')}}
+    {{form_widget(userForm.email)}}
+    </div>
+    <div>
+    {{form_label(userForm.name, 'Nom :')}}
+    {{form_widget(userForm.name)}}
+    </div>
+    <div>
+    {{form_label(userForm.firstname, 'Prénom :')}}
+    {{form_widget(userForm.firstname)}}
+    </div>
+    <div>
+    {{form_label(userForm.password, 'Mot de passe :')}}
+    {{form_widget(userForm.password)}}
+    </div>
+    <div>
+    {{form_widget(userForm.Enregistrer)}}
+    </div>
+
+</div>
+
+{{ form_end(userForm) }}
+
+{% endblock %}

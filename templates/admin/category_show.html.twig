@@ -1,0 +1,61 @@
+{% extends 'admin/base.html.twig' %}
+
+{% block main %}
+
+<div class="container row g-3 align-items-center">
+    <table class="table">
+        <thead>
+             <tr>
+                <th scope="col">#</th>
+                <th scope="col">Name</th>
+                <th scope="col">Description</th>
+                <th scope="col">Option</th>
+            </tr>
+        </thead>
+        <tbody>     
+                <tr>
+                    <th scope="row">{{category.id}}</th>
+                    <td>{{category.name}}</td>
+                    <td>{{category.description}}</td>
+                    <td>
+                    <a href="{{ path('admin_update_category', {'id' : category.id } ) }}" style="color: black">
+                    <i class="fa-solid fa-pen-to-square"></i></a>
+                    <a href="{{ path('admin_delete_category', {'id' : category.id}) }}" style="color: black">
+                    <i class="fa-solid fa-trash-can"></i></a>
+                    </td>
+                </tr>
+
+        </tbody>
+    </table>
+</div>
+
+	
+    
+<div class="container row g-3 align-items-center">
+    <table class="table">
+		<thead>
+			<tr>
+				<th scope="col">Produits de cette catégorie</th>
+			</tr>
+		</thead>
+		<tbody>
+			{% for product in category.products %}
+				<tr>
+					<td>
+						<a href="{{ path('admin_product_show', {'id' : product.id}) }}" style="color: black">{{ product.name }}</a>
+					</td>
+				</tr>
+			{% endfor %}
+		</tbody>
+	</table>
+</div>
+
+
+
+
+
+
+
+
+
+{% endblock %}
